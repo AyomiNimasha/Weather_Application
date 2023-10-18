@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { SearchCurrenthData,ThreeDaysForecast,NextWeekForecast } from './EndPoint';
 
 function FetchData(){
-    const [cityName,setcityName]=useState('colombo');
+    const cityName='colombo';
     const [currentWeather,setCurrentWether]=useState({});
     const [threeDaysForecast,setThreeDaysForecast]=useState({});
     const [nextWeekForecast,setNextWeekForecast]=useState({});
@@ -22,7 +22,7 @@ function FetchData(){
 
     },[cityName])
   return (
-    <div>FetchData</div>
+    <div></div>
   )
 }
 export default FetchData;
