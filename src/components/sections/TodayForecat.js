@@ -53,13 +53,13 @@ const TodayForecat = (props) => {
 
 
   return (
-    <div className="flex flex-col md:flex-row gap-4 w-full items-center justify-between">
-      <div className="flex   justify-center w-1/3 h-[400px]">
+    <div className="md:flex gap-4 md:w-full   items-center justify-between">
+      <div className="flex justify-center md:w-1/3 h-[400px]">
         {isHot && <img src={sunrised} alt="" width={"400px"} height={"400px"} />}
         {!isHot && <img src={rain} alt="" />}
       </div>
 
-      <div className="flex flex-col w-1/3 justify-center items-center gap-2">
+      <div className="flex flex-col md:w-1/3 sm:w-full justify-center items-center gap-2">
         <div className="flex text-xl text-slate-600 m-5">{isColombo ? "Colombo Forecast" : ""}</div>
         <div className="text-8xl">
           {temperature}
@@ -69,7 +69,7 @@ const TodayForecat = (props) => {
         </div>
         <div className="flex text-4xl text-blue-600">{weatherDescription}</div>
       </div>
-      <div className="flex flex-col w-1/3 justify-center ">
+      <div className="flex flex-col md:w-1/3 justify-center ">
         <DetailCard title={"Wind Speed"} data={`${windSpeed} ms-1`} />
         <DetailCard title={"Humidity"} data={`${humidity} %`} />
         <DetailCard title={"Pressure"} data={`${pressure} hPa`} />

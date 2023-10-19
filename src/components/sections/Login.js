@@ -24,11 +24,11 @@ const Login = () => {
         backgroundPosition: "center",
       }}
     >
-      <div className="flex justify-start text-blue-600 text-6xl font-bold backdrop-blur-md drop-shadow-2xl">
+      <div className="flex justify-start text-blue-600 text-4xl md:text-6xl font-bold backdrop-blur-md drop-shadow-2xl">
         Welcome To Weather Forecast
       </div>
       <div className="text-4xl text-white font-bold">Login in to continue</div>
-      <form className="justify-center flex-col w-1/2">
+      <form className="justify-center flex-col md:w-1/2">
         <div className="flex p-4 items-center w-full">
           <sapan className="text-xl text-black font-bold w-44">User Name</sapan>
           <input
@@ -54,7 +54,7 @@ const Login = () => {
         <div className="flex  items-center p-4">
           <button
             type="submit"
-            className="bg-blue-600 px-4 py-2 w-1/2 text-white text-xl font-bold rounded-lg"
+            className="bg-blue-600 px-4 py-2 md:w-1/2  text-white text-xl font-bold rounded-lg"
             onClick={handleLogin}
           >
             Login
