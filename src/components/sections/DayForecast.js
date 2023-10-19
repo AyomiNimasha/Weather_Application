@@ -1,5 +1,5 @@
 import {React,useState,useEffect} from 'react'
-import WhetherCard from '../WeatherCard'
+import WhetherCard from '../components/WeatherCard'
 import axios from 'axios';
 
 export const DayForecast = (props) => {

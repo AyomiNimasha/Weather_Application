@@ -1,46 +1,66 @@
 import React, { useState } from "react";
-import weatherbackground from '../assets/weatherbackground.jpg'
+import loginbackground from "../assets/loginbackground.avif"
+import { useNavigate } from "react-router-dom";
 const Login = () => {
-    const [userName,setUserName]=useState('');
-    const [password,setPassword]=useState('');
+  const [userName, setUserName] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
-    const handleLogin=(e)=>{
-        e.preventDefault();
-        if(userName==='abc' && password==='@123'){
-            console.log('login successfull!')
-        }else{
-            <div>"Invalid username or password. Please try again"</div>
-            console.log("Invalid login")
-        }
-    };
+  const handleLogin = (e) => {
+    e.preventDefault();
+    if (userName === "admin" && password === "admin") {
+      navigate("/home");
+    } else {
+      <div>"Invalid username or password. Please try again"</div>;
+      console.log("Invalid login");
+    }
+  };
   return (
-    <div className="flex flex-col items-center justify-center h-screen xl:py-24"  style={{
-      backgroundImage: `url(${weatherbackground})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-    }}>
-      <div className="flex flex-col rounded-lg justify-center items-center "  >
-         
-          <div>Welcome To Weather Forecast</div>
-          <div>Login in to continue</div>
-          <div className="flex w-[500px] h-[400px] justify-center items-center p-6 ">
-          <form className="justify-center w-full h-full">
-            <div className="flex flex-col p-4">
-              <label className="text-lg">User Name</label>
-              <input type="text" value={userName} onChange={(e)=>setUserName(e.target.value)} required placeholder="Username" className="h-14 pl-4"/>
-            </div>
-            <div className="flex flex-col p-4">
-              <label className="text-lg">Password</label>
-              <input type="text" value={password} onChange={(e)=>setPassword(e.target.value)} required placeholder="Password" className="p-1 border-b border-gray-500 focus:outline-none h-14 pl-4"/>
-            </div>
-            <div className="flex justify-center items-center p-8">
-            <button type="submit" className="bg-blue-400 p-4 w-full" onClick={handleLogin}>Login</button>
-            </div>
-          
-          </form>
-          </div>
+    <div
+      className="flex flex-col  h-screen p-24 gap-4"
+      style={{
+        backgroundImage: `url(${loginbackground})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <div className="flex justify-start text-blue-600 text-6xl font-bold backdrop-blur-md drop-shadow-2xl">
+        Welcome To Weather Forecast
       </div>
-      
+      <div className="text-4xl text-white font-bold">Login in to continue</div>
+      <form className="justify-center flex-col w-1/2">
+        <div className="flex p-4 items-center w-full">
+          <sapan className="text-xl text-black font-bold w-44">User Name</sapan>
+          <input
+            className="flex w-full py-2 px-1"
+            type="text"
+            value={userName}
+            onChange={(e) => setUserName(e.target.value)}
+            required
+            placeholder="Username"
+          />
+        </div>
+        <div className="flex  p-4 items-center w-full">
+          <sapan className="text-xl text-black font-bold w-44">Password</sapan>
+          <input
+            className="flex w-full py-2 px-1"
+            type="text"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            placeholder="Password"
+          />
+        </div>
+        <div className="flex  items-center p-4">
+          <button
+            type="submit"
+            className="bg-blue-600 px-4 py-2 w-1/2 text-white text-xl font-bold rounded-lg"
+            onClick={handleLogin}
+          >
+            Login
+          </button>
+        </div>
+      </form>
     </div>
   );
 };
